@@ -6,7 +6,7 @@
         <div class="loginPage-background">
             <!-- Logo -->
             <div class="logo" :style="{ '--logo-position': signIn ? '5%' : '85%' }">
-                <span>WuYue</span>
+                <span style="color: #AEB5C4;">WuYue</span>
                 <svg width="40" height="10" viewBox="0 0 40 10" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M0 5 C0 7.76142 2.23858 10 5 10 H35 C37.7614 10 40 7.76142 40 5 V5 C40 2.23858 37.7614 0 35 0 H5 C2.23858 0 0 2.23858 0 5 Z" fill="#1A1A1A"/>
 </svg>
@@ -62,7 +62,7 @@
             <div class="login-image" :class="signIn ? '' : 'move-left'">
                 <img src = "../assets/login.png" alt="Login Image" />
                 <div class="description">
-                    <span>{{ showText }}</span>
+                    <span style="color: #086FA7; font-size: 15px;">{{ showText }}</span>
                     <span>|</span>
                 </div>
             </div>
@@ -74,7 +74,6 @@
   import { reactive, ref, onMounted, onUnmounted, computed } from 'vue';
   import { login, register } from '../api/user';
   import { useRouter } from 'vue-router';
-  import { userLoadingStore } from '@/stores/userLoadingStore';
   
   const router = useRouter();
 
@@ -129,11 +128,8 @@
   const loading = ref(false);
   const signIn = ref(true);
   const errorMessage = ref('');
-  const loadingStore = userLoadingStore();
   
   const handleLogin = async () => {
-    loadingStore.show();
-
     setTimeout(async () =>{
       loading.value = true;
       errorMessage.value = '';
@@ -142,26 +138,15 @@
       const response = await login(form.username, form.password);
 
       // 如果登录成功，后端返回status为200的Ok结果，带有token数据
-      // console.log('登录响应:', response); // 添加日志，查看具体响应
+      console.log('登录响应:', response); // 添加日志，查看具体响应
 
-      if (response && response.token) {
-        // 保存token到localStorage
-        localStorage.setItem('token', response.token);
-        localStorage.setItem('username', response.username);
+      if (response) {
         // 跳转到首页或其他页面
         router.push('/home');
-        loadingStore.hide();
       } else {
-        loadingStore.hide();
         errorMessage.value = '登录失败，请检查用户名和密码';
       }
     } catch (error) {
-      setTimeout(() => {
-        loadingStore.hide();
-      }, 1000)
-
-      // console.error('登录出错:', error);
-
       // 如果有详细错误信息，显示它
       if (error.response && error.response.data) {
         errorMessage.value = error.response.data;
@@ -265,7 +250,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    min-width: 800px;
+    min-width: 100vw;
     min-height: 600px;
   }
 
@@ -304,7 +289,7 @@
   }
   
   .login-form {
-    width: 50%;
+    width: 30%;
     padding: 40px;
     background-color: rgba(255,255,255,0.3);
     border-radius: 8px;
@@ -322,7 +307,7 @@
   }
 
   .move-right {
-    transform: translateX(100%);
+    transform: translateX(140%);
   }
   
   .logo {
@@ -340,6 +325,7 @@
   
   .welcome {
     font-size: 24px;
+    color:#AEB5C4;
     margin-bottom: 30px;
     transition: opacity 0.3s ease;
   }
@@ -449,7 +435,7 @@
   }
   
   .login-image {
-    width: 50%;
+    width: 40%;
     padding: 40px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -467,7 +453,8 @@
   }
   
   .login-image img {
-    width: 100%;
+    width: 90%;
+    height: 90%;
     border-radius: 16px;
   }
 
