@@ -2,7 +2,7 @@
     <div class="container">
         <div class="shadow"></div>
 
-        <TopBar></TopBar>
+        
         <div class="first-page-clock">
             <!-- 艺术标题区域 -->
             <div class="hero-title">
@@ -71,7 +71,6 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import TopBar from '../components/TopBar.vue';
 
 // 定义数组变量，为每张图配置对应的文字颜色和详细信息
 const mountains = ref([
