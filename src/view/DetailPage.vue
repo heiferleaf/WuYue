@@ -116,14 +116,16 @@ export default {
         },
         {
           title: "十八盘",
-          description:"是泰山登山盘道中最险要的一段，全长约1公里，共有1600多级台阶，陡峭的石阶如天梯般直通南天门，两侧峰峦夹峙，云雾缭绕时更显险峻。",
-          image:"/src/assets/detail/1/shibapan.jpg"
+          description:
+            "是泰山登山盘道中最险要的一段，全长约1公里，共有1600多级台阶，陡峭的石阶如天梯般直通南天门，两侧峰峦夹峙，云雾缭绕时更显险峻。",
+          image: "/src/assets/detail/1/shibapan.jpg",
         },
         {
-          title:"仙人桥",
-          description:"由三块巨石天然叠成桥状，下临深渊，桥长约10米，宽仅1米左右，站在桥上可感受大自然的鬼斧神工。",
-          image:"/src/assets/detail/1/xianrenqiao.jpg"
-        }
+          title: "仙人桥",
+          description:
+            "由三块巨石天然叠成桥状，下临深渊，桥长约10米，宽仅1米左右，站在桥上可感受大自然的鬼斧神工。",
+          image: "/src/assets/detail/1/xianrenqiao.jpg",
+        },
       ],
 
       culturalScenes: [
@@ -150,7 +152,7 @@ export default {
           description:
             "是泰山上的一座道教古建筑，始建于宋代，现存建筑为明代重建。碧霞祠红墙青瓦，在云雾中若隐若现，与周围的山色相融，殿内供奉着碧霞元君，香火旺盛。",
           image: "/src/assets/detail/1/bixiaci.jpg",
-        }
+        },
       ],
     };
   },
@@ -352,11 +354,11 @@ export default {
 
 .natural-btn {
   /* background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%); */
-  background-image: url('../assets/detail/button.png');
+  background-image: url("../assets/detail/button.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
+
   color: white;
 }
 
@@ -366,7 +368,7 @@ export default {
 
 .cultural-btn {
   /* background: linear-gradient(135deg, #5d4037 0%, #8d6e63 100%); */
-  background-image: url('../assets/detail/button.png');
+  background-image: url("../assets/detail/button.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

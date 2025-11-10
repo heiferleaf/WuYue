@@ -51,11 +51,9 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 const navItems = [
   { name: '首页', path: '/' },
-  { name: '详情页', path: '/detail' },
-  { name: '衡山', path: '/' },
-  { name: '华山', path: '/' },
-  { name: '嵩山', path: '/' },
-  { name: '泰山', path: '/' }
+  { name: '名山详情', path: '/detail' },
+  { name: '文化与传说', path: '/culture' },
+  { name: '旅行指南', path: '/travel' }
 ]
 
 const activedIdx = ref(-1)
